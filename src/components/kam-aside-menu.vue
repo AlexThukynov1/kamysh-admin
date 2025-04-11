@@ -1,32 +1,38 @@
 <template>
         <div class="aside aside-container">
-        <router-link 
-            exactActiveClass="active-link" 
-            class="aside__link" 
-            to="/"
-            >Головна
-        </router-link>
+        <div class="logo-wrapper">
+            <img class="logo" src="https://placehold.co/125x25" alt="">
+        </div>
 
-        <router-link 
-            exactActiveClass="active-link" 
-            class="aside__link" 
-            to="/catalog"
-            >Товари
-        </router-link>
-
-        <router-link 
-            exactActiveClass="active-link" 
-            class="aside__link" 
-            to="/orders"
-            >Замовлення
-        </router-link>
-
-        <router-link 
-            exactActiveClass="active-link" 
-            class="aside__link" 
-            to="/clients"
-            >Клієнти
-        </router-link>
+        <div class="aside__link-wrapper">
+            <router-link 
+                exactActiveClass="active-link" 
+                class="aside__link" 
+                to="/"
+                >Головна
+            </router-link>
+    
+            <router-link 
+                exactActiveClass="active-link" 
+                class="aside__link" 
+                to="/catalog"
+                >Товари
+            </router-link>
+    
+            <router-link 
+                exactActiveClass="active-link" 
+                class="aside__link" 
+                to="/orders"
+                >Замовлення
+            </router-link>
+    
+            <router-link 
+                exactActiveClass="active-link" 
+                class="aside__link" 
+                to="/clients"
+                >Клієнти
+            </router-link>
+        </div>
     </div>
 </template>
 
@@ -35,12 +41,24 @@
 </script>
 
 <style scoped>
+.logo-wrapper {
+    height: 3.5rem;
+    border-bottom: solid 2px var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .aside-container {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
     flex: 1;
     border-right: solid 2px var(--border-color);
+}
+.aside__link-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
 }
 .aside__link {
     padding: 1rem;
