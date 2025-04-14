@@ -1,16 +1,5 @@
 <template>
     <div class="client-wrapper">
-        <!-- <div
-            v-for="client in clients"
-            :key="client.id"
-            class="client"
-        >
-        <span class="client-id">{{ client.id }}</span>
-        <span class="client-name">{{ client.firstName }}</span>
-        <span class="client-last-name">{{ client.lastName }}</span>
-        <span class="client-mail">{{ client.email }}</span>
-        <span class="client-phone">{{ client.phone }}</span>
-        <span class="client-comment">{{ client.comment }}</span> -->
         <table class="client-list">
                 <tr>
                     <td>ID</td>

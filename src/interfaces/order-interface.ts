@@ -1,4 +1,4 @@
-export interface IOrder {
+export default interface IOrder {
     id: number,
     clientId: number,
     itemsId: number[],
@@ -8,10 +8,10 @@ export interface IOrder {
 }
 
  export enum orderStatus {
-    toDo,
-    inProgres,
-    paid,
-    delivery,
-    done,
-    reset
+    toDo = 'Новий',
+    inProgres = 'В роботі',
+    paid =  'Оплачено',
+    delivery = 'Доставка',
+    done = 'Виконано',
+    reset = 'Відмінений'
 }

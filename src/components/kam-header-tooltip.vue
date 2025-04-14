@@ -17,8 +17,9 @@
     justify-content: flex-end;
     align-items: center;
     border-bottom: 2px solid var(--border-color);
-    height: 3.5rem;
+    height: var(--header-height);
     padding-right: 1.5rem;
+
 }
 .tooltip__container {
     display: flex;

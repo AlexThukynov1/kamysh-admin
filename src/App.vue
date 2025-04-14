@@ -17,7 +17,8 @@ import kamHeaderTooltip from './components/kam-header-tooltip.vue';
 .main-container {
   display: flex;
   justify-content: space-around;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   align-items: stretch;
   width: 100%;
   margin-inline: auto;
