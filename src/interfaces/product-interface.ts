@@ -3,6 +3,6 @@ export default interface Iproduct {
     name: string,
     description: string,
     price: number,
-    : string,
+    imgSrc: string,
     availible: boolean
 }

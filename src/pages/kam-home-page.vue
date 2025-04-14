@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h2>Домашня сторінка</h2>
+    <div class="container">
+        <h2 class="page-title">Домашня сторінка</h2>
     </div>
 </template>
 

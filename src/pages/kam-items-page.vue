@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h2>Товари</h2>
+    <div class="container">
+        <h2 class="page-title">Товари</h2>
         <kam-product :items="items"/>
         
     </div>
@@ -35,8 +35,33 @@ import {ref} from 'vue'
             imgSrc: "https://placehold.co/100x100",
             price: 175.00,
             availible: false
+        },
+        {
+            id:3,
+            name: "Item 1",
+            description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis officia sint reprehenderit maxime fuga, iste tenetur vel nostrum harum mollitia placeat voluptas laboriosam ipsa error!",
+            imgSrc: "https://placehold.co/100x100",
+            price: 100.00,
+            availible: true
+        },
+        {
+            id:4,
+            name: "Item 2",
+            description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis officia sint reprehenderit maxime fuga, iste tenetur vel nostrum harum mollitia placeat!",
+            imgSrc: "https://placehold.co/100x100",
+            price: 150.00,
+            availible: true
+        },
+        {
+            id:5,
+            name: "Item 3",
+            description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis officia sint reprehenderit maxime fuga, iste tenetur vel nostrum harum mollitia placeat voluptas laboriosam ipsa errorvoluptas laboriosam ipsa error oluptas laboriosam ipsa errorvoluptas laboriosam ipsa error!",
+            imgSrc: "https://placehold.co/100x100",
+            price: 175.00,
+            availible: false
         }
     ])
 </script> 
 <style scoped>
+
 </style>

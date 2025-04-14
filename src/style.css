@@ -101,7 +101,7 @@ textarea {
 h1,
 h2,
 h3 {
-  color: var(--accent-color);
+  color: var(--main-text-color);
   font-weight: var(--font-bold);
 }
 
@@ -121,4 +121,12 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+.container {
+  padding: 10px;
+}
+.page-title {
+  text-align: center;
+  font-size: var(--big-font-size);
+  margin-bottom: 2rem;
 }

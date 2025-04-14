@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h2>Замовлення</h2>
+    <div class="container">
+        <h2 class="page-title">Замовлення</h2>
     </div>
 </template>
 
