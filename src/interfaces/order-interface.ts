@@ -10,6 +10,7 @@ export default interface IOrder {
  export enum orderStatus {
     toDo = 'Новий',
     inProgres = 'В роботі',
+    waitPaid = 'Очікує на оплату',
     paid =  'Оплачено',
     delivery = 'Доставка',
     done = 'Виконано',

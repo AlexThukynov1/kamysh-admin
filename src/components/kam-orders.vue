@@ -1,30 +1,32 @@
 <template>
     <div class="">
         <table class="orders-list">
-            <tr>
-                <td>Номер замовлення</td>
-                <td>Клієнт</td>
-                <td>Товари</td>
-                <td>Cтатус</td>
-                <td>Інформація</td>
-                <td>Менеджер</td>
-            </tr>
-            <tr
-                v-for="order in orders"
-                :key="order.id"
-                class="order-item"
-            >
-                <td>{{ order.id }}</td>
-                <td>{{ order.clientId }}</td>
-                <td><ol>
-                    <li
-                        v-for="idItem in order.itemsId"
-                    >{{ idItem }}</li>
-                </ol></td>
-                <td>{{ order.orderStatus }}</td>
-                <td>{{ order.info }}</td>
-                <td>{{ order.managerId }}</td>
-            </tr>
+            <tbody>
+                <tr>
+                    <td>Номер замовлення</td>
+                    <td>Клієнт</td>
+                    <td>Товари</td>
+                    <td>Cтатус</td>
+                    <td>Інформація</td>
+                    <td>Менеджер</td>
+                </tr>
+                <tr
+                    v-for="order in orders"
+                    :key="order.id"
+                    class="order-item"
+                >
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.clientId }}</td>
+                    <td><ol>
+                        <li
+                            v-for="idItem in order.itemsId"
+                        >{{ idItem }}</li>
+                    </ol></td>
+                    <td>{{ order.orderStatus }}</td>
+                    <td>{{ order.info }}</td>
+                    <td>{{ order.managerId }}</td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </template>

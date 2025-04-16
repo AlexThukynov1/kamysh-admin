@@ -1,26 +1,28 @@
 <template>
     <div class="client-wrapper">
         <table class="client-list">
-                <tr>
-                    <td>ID</td>
-                    <td>Ім'я</td>
-                    <td>Прізвище</td>
-                    <td>Email</td>
-                    <td>Телефон</td>
-                    <td>Коментар</td>
+                <tbody>
+                    <tr>
+                        <td>ID</td>
+                        <td>Ім'я</td>
+                        <td>Прізвище</td>
+                        <td>Email</td>
+                        <td>Телефон</td>
+                        <td>Коментар</td>
+                    </tr>
+                <tr
+                v-for="client in clients"
+                :key="client.id"
+                class="client"
+                >
+                    <td class="client-id">{{ client.id }}</td>
+                    <td class="client-name">{{ client.firstName }}</td>
+                    <td class="client-last-name">{{ client.lastName }}</td>
+                    <td class="client-mail">{{ client.email }}</td>
+                    <td class="client-phone">{{ client.phone }}</td>
+                    <td class="client-comment">{{ client.comment }}</td>
                 </tr>
-            <tr
-            v-for="client in clients"
-            :key="client.id"
-            class="client"
-            >
-                <td class="client-id">{{ client.id }}</td>
-                <td class="client-name">{{ client.firstName }}</td>
-                <td class="client-last-name">{{ client.lastName }}</td>
-                <td class="client-mail">{{ client.email }}</td>
-                <td class="client-phone">{{ client.phone }}</td>
-                <td class="client-comment">{{ client.comment }}</td>
-            </tr>
+                </tbody>
         </table>
         <!-- </div> -->
     </div>
