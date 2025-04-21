@@ -4,34 +4,37 @@ import kamClientsPage from '../pages/kam-clients-page.vue';
 import kamHomePage from '../pages/kam-home-page.vue';
 import kamItemsPage from '../pages/kam-items-page.vue';
 import kamOrdersPage from '../pages/kam-orders-page.vue';
-import kamLoginPage from '../pages/cam-login-page.vue';
+import kamLoginPage from '../pages/kam-login-page.vue';
+import KamAdminPage from '../pages/kam-admin-page.vue';
 
 const routes: Array<RouteRecordRaw> = [
     {
-        path: '/login',
+        path: '/',
         name: 'Login',
         component: kamLoginPage
     },
     {
         path: '/admin',
+        component: KamAdminPage,
+        name: 'Admin',
         children: [
             {
-                path: '/',
+                path: '',
                 name: 'Home',
                 component: kamHomePage
             },
             {
-                path: '/catalog',
+                path: 'catalog',
                 name: 'Catalog',
                 component: kamItemsPage
             },
             {
-                path: '/orders',
+                path: 'orders',
                 name: 'Orders',
                 component: kamOrdersPage
             },
             {
-                path: '/clients',
+                path: 'clients',
                 name: 'Clients',
                 component: kamClientsPage
             },

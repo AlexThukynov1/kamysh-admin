@@ -9,28 +9,28 @@
                 <router-link 
                     exactActiveClass="active-link" 
                     class="aside__link" 
-                    to="/"
+                    to="/admin"
                     >Головна
                 </router-link>
         
                 <router-link 
                     exactActiveClass="active-link" 
                     class="aside__link" 
-                    to="/catalog"
+                    to="/admin/catalog"
                     >Товари
                 </router-link>
         
                 <router-link 
                     exactActiveClass="active-link" 
                     class="aside__link" 
-                    to="/orders"
+                    to="/admin/orders"
                     >Замовлення
                 </router-link>
         
                 <router-link 
                     exactActiveClass="active-link" 
                     class="aside__link" 
-                    to="/clients"
+                    to="/admin/clients"
                     >Клієнти
                 </router-link>
             </div>
