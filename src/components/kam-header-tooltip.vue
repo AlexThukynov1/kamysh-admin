@@ -14,33 +14,18 @@
 </template>
 
 <script setup lang="ts">
-import { auth } from '../firebase/firebase.ts';
-import { useRouter } from 'vue-router';
-import { onAuthStateChanged, signOut, User } from 'firebase/auth';
 import { ref, onMounted } from 'vue';
+import { useUserStore } from '../store/user-store.ts';
 
-
+const store = useUserStore();
 const modalVisible = ref(false);
-const router = useRouter();
-const user = ref<User | null>(null);
+const {onAuthStateChanged, logout} = store;
 
 onMounted(() => {
-  onAuthStateChanged(auth, (currentUser) => {
-    user.value = currentUser;
-    if (!currentUser && router.currentRoute.value.meta.requiresAuth) {
-      router.push('/login');
-    }
-  });
+  onAuthStateChanged
 });
 
-const logout = async () => {
-  try {
-    await signOut(auth);
-    router.push('/login');
-  } catch (error: any) {
-    console.error('Помилка виходу:', error.message);
-  }
-};
+
 </script>
 
 <style scoped>
