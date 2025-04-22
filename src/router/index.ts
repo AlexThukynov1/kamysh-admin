@@ -6,6 +6,7 @@ import kamItemsPage from '../pages/kam-items-page.vue';
 import kamOrdersPage from '../pages/kam-orders-page.vue';
 import kamLoginPage from '../pages/kam-login-page.vue';
 import KamAdminPage from '../pages/kam-admin-page.vue';
+import { auth } from '../firebase/firebase';
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -17,6 +18,7 @@ const routes: Array<RouteRecordRaw> = [
         path: '/admin',
         component: KamAdminPage,
         name: 'Admin',
+        meta: { requiresAuth: true },
         children: [
             {
                 path: '',
@@ -42,7 +44,15 @@ const routes: Array<RouteRecordRaw> = [
     },
 ];
 
-export const router = createRouter({
+const router = createRouter({
     history: createMemoryHistory(),
     routes,
   })
+
+  router.beforeEach(async (to) => {
+    if (to.meta.requiresAuth && !auth.currentUser) {
+      return '/login';
+    }
+  });
+
+  export default router
