@@ -44,11 +44,11 @@ const emit = defineEmits({
 
 <style scoped>
 .product-wrapper {
-display: grid;
-grid-template-columns: repeat(5, max-content);
-justify-content: center;
-column-gap: 3rem;
-row-gap: 3rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: left;
 
 }
 .product-item {

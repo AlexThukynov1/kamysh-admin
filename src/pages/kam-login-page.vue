@@ -13,8 +13,6 @@
         <button class="form-button " type="submit">Увійти</button>
         <p v-if="error">{{ error }}</p>
       </form>
-
-      <router-link to="/admin">Admin</router-link>
     </div>
   </template>
   

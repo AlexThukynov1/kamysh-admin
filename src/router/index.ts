@@ -11,6 +11,10 @@ import { auth } from '../firebase/firebase';
 const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
+        redirect: '/admin',
+      },
+    {
+        path: '/login',
         name: 'Login',
         component: kamLoginPage
     },
