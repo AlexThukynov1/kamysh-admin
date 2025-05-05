@@ -1,18 +1,18 @@
-import { createMemoryHistory, createRouter } from 'vue-router';
-import type { RouteRecordRaw } from 'vue-router';
+import {createMemoryHistory, createRouter} from 'vue-router';
+import type {RouteRecordRaw} from 'vue-router';
 import kamClientsPage from '../pages/kam-clients-page.vue';
 import kamHomePage from '../pages/kam-home-page.vue';
 import kamItemsPage from '../pages/kam-items-page.vue';
 import kamOrdersPage from '../pages/kam-orders-page.vue';
 import kamLoginPage from '../pages/kam-login-page.vue';
 import KamAdminPage from '../pages/kam-admin-page.vue';
-import { auth } from '../firebase/firebase';
+import {auth} from '../firebase/firebase';
 
 const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
         redirect: '/admin',
-      },
+    },
     {
         path: '/login',
         name: 'Login',
@@ -22,7 +22,7 @@ const routes: Array<RouteRecordRaw> = [
         path: '/admin',
         component: KamAdminPage,
         name: 'Admin',
-        meta: { requiresAuth: true },
+        meta: {requiresAuth: true},
         children: [
             {
                 path: '',
@@ -51,12 +51,21 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
     history: createMemoryHistory(),
     routes,
-  })
+})
 
-  router.beforeEach(async (to) => {
-    if (to.meta.requiresAuth && !auth.currentUser) {
-      return '/login';
+router.beforeEach((to, from) => {
+    if (to.meta.requiresAuth) {
+        const isAuthenticated = checkUserAuthentication();
+        if (!isAuthenticated) {
+            return '/login';
+        }
+
     }
-  });
+    return true;
+});
 
-  export default router
+function checkUserAuthentication() {
+    return sessionStorage.getItem('user') !== null;
+}
+
+export default router

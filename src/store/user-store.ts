@@ -10,23 +10,13 @@ const USER_STORAGE_KEY = 'user';
 
 export const useUserStore = defineStore('user', () => {
   const user = ref<User | null>(getSessionUser());
-
-
-    onAuthStateChanged(auth, (currentUser) => {
-        user.value = currentUser;
-        setSessionUser(currentUser);
-        if (!currentUser && router.currentRoute.value.meta.requiresAuth) {
-            console.log(currentUser +' ' + ' ', router.currentRoute.value.meta.requiresAuth)
-          router.push('/login');
-        }
-      });
- 
+  const isAuthenticated = ref<Boolean>(false)
 
   const logout = async () => {
     try {
       await signOut(auth);
+      isAuthenticated.value = false
       removeSessionUser();
-      router.push('/login');
     } catch (error: any) {
       console.error('Помилка виходу:', error.message);
     }
@@ -37,17 +27,9 @@ export const useUserStore = defineStore('user', () => {
     return storedUser ? JSON.parse(storedUser) as User : null;
   }
 
-  function setSessionUser(user: User | null) {
-    if (user) {
-      sessionStorage.setItem(USER_STORAGE_KEY, JSON.stringify(user));
-    } else {
-      sessionStorage.removeItem(USER_STORAGE_KEY);
-    }
-  }
-
   function removeSessionUser() {
     sessionStorage.removeItem(USER_STORAGE_KEY);
   }
 
-  return { user, logout, login };
+  return { user, logout, onAuthStateChanged, isAuthenticated };
 });

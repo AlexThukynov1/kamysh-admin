@@ -8,7 +8,7 @@
         </div>
         <div class="input-wrapper">
           <label for="password">Пароль:</label>
-          <input type="password" id="password" v-model="password" value="{{import.meta.env.VUE_APP_API_KEY}}" required>
+          <input type="password" id="password" v-model="password" required>
         </div>
         <button class="form-button " type="submit">Увійти</button>
         <p v-if="error">{{ error }}</p>
@@ -21,7 +21,9 @@
   import { auth } from '../firebase/firebase';
   import { signInWithEmailAndPassword } from 'firebase/auth';
   import { useRouter } from 'vue-router';
+  import {useUserStore} from '../store/user-store'
   
+  const store = useUserStore()
   const email = ref('');
   const password = ref('');
   const error = ref('');

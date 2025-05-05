@@ -18,12 +18,7 @@ import {useUserStore} from '../store/user-store.ts'
 
 const store = useUserStore();
 const router = useRouter();
-const {login} = store;
 
-onMounted(() => {
-  login
-  console.log('mounted')
-});
 
 
 </script>

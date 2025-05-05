@@ -5,7 +5,7 @@
             <i class="ri-user-line" @click="modalVisible = !modalVisible"></i>
         </div>
         <div class="modal logout" v-if="modalVisible">
-           <div class="logout-block" @click="logout">
+           <div class="logout-block" @click="logOutFunc">
                 <span class="logout-text">Вийти</span>
                 <i class="ri-logout-box-r-line logout-icon"></i>
            </div>
@@ -15,13 +15,20 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import {useUserStore} from '../store/user-store.ts'
+import {useUserStore} from '../store/user-store'
 
 const store = useUserStore();
 const modalVisible = ref(false);
 const {onAuthStateChanged, logout} = store;
+import {useRouter} from 'vue-router'
 
+const router = useRouter()
 
+const logOutFunc = async () => {
+    await logout()
+    await router.push('/login');
+
+}
 
 
 </script>
