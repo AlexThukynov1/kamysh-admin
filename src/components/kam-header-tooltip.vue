@@ -15,14 +15,13 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import { useUserStore } from '../store/user-store.ts';
+import {useUserStore} from '../store/user-store.ts'
 
 const store = useUserStore();
 const modalVisible = ref(false);
 const {onAuthStateChanged, logout} = store;
 
 onMounted(() => {
-  onAuthStateChanged
 });
 
 
