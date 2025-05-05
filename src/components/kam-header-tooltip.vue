@@ -21,8 +21,7 @@ const store = useUserStore();
 const modalVisible = ref(false);
 const {onAuthStateChanged, logout} = store;
 
-onMounted(() => {
-});
+
 
 
 </script>

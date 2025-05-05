@@ -8,9 +8,22 @@
   </div>
 </template>
 <script setup lang="ts">
+import {ref, onMounted} from 'vue';
 import kamAsideMenu from '../components/kam-aside-menu.vue'
 import kamHeaderTooltip from '../components/kam-header-tooltip.vue'
+import {onAuthStateChanged} from 'firebase/auth'
+import {auth} from '../firebase/firebase'
+import {useRouter} from 'vue-router'
+import {useUserStore} from '../store/user-store.ts'
 
+const store = useUserStore();
+const router = useRouter();
+const {login} = store;
+
+onMounted(() => {
+  login
+  console.log('mounted')
+});
 
 
 </script>
